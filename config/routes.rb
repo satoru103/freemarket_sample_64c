@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :addresses, only: [:new, :create, :edit, :update]
   end
   resources :cards, only: [:index, :new]
-  resources :categories, only: [:index]
+  resources :categories, only: [:index, :show]
   
 end
