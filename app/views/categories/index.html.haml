@@ -8,7 +8,8 @@
   %ul.category1
     - @category_parent.each do |parent|
       %li.parent_list_top
-        = link_to parent.name,"#"
+        -# 下行、ページ内リンクのためanchor指定しています
+        = link_to parent.name, {anchor: "#{parent.id}" }
         -# %ul.category2
         -#   - parent.children.each do |child|
         -#     %li.child_list_top
@@ -20,7 +21,8 @@
   
   %ul.category1
     - @category_parent.each do |parent|
-      %li.parent_list
+      -# 下行、ページ内リンクのためid指定しています
+      %li.parent_list{ id: "#{parent.id}"} 
         .parent_name
           = parent.name
         %ul.category2
@@ -32,8 +34,7 @@
                 - child.children.each do |grandchild|
                   %li.grandchild_list{style:"text-indent:2.5em"}
                     .grandchild_name
-                      =link_to grandchild.name,"#"
-
+                      =link_to grandchild.name, category_path(grandchild.id)
 
 
 :css

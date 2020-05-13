@@ -1,1 +1,6 @@
-= @category_items
+
+-@category_items.each do |category_item|
+  = image_tag category_item.pictures[0].image.url,size:"185x189"
+  = category_item.item_name
+  = category_item.price
+-# = @category_items.image
