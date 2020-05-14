@@ -19,11 +19,11 @@
         %ul.category1
           - @category_parent.each do |parent|
             %li.parent_list
-              = parent.name
+              = link_to parent.name, category_path(parent.indirects.ids),{style:"color: black"}
               %ul.category2
                 - parent.children.each do |child|
                   %li.child_list
-                    =child.name
+                    = link_to child.name, category_path(child.children.ids),{style:"color: black"}
                     %ul.category3
                       - child.children.each do |grandchild|
                         %li.grandchild_list
