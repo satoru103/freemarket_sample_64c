@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end 
   resources :users, only: [:edit, :update, :show] do
     resources :addresses, only: [:new, :create, :edit, :update]
+    resources :comments, only: [:create]
   end
 
   resources :cards, only: [:index,:new,:show] do
