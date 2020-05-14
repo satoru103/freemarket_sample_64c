@@ -16,18 +16,18 @@
         = link_to categories_path do
           = "カテゴリー"
           = image_tag 'icon_category.png'
-          %ul.category1
-            - @category_parent.each do |parent|
-              %li.parent_list
-                = parent.name
-                %ul.category2
-                  - parent.children.each do |child|
-                    %li.child_list
-                      =child.name
-                      %ul.category3
-                        - child.children.each do |grandchild|
-                          %li.grandchild_list
-                            =grandchild.name
+        %ul.category1
+          - @category_parent.each do |parent|
+            %li.parent_list
+              = parent.name
+              %ul.category2
+                - parent.children.each do |child|
+                  %li.child_list
+                    =child.name
+                    %ul.category3
+                      - child.children.each do |grandchild|
+                        %li.grandchild_list
+                          = link_to grandchild.name, category_path(grandchild.id),{style:"color: black"}
               
         .category
           %ul.categoryIndex
