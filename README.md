@@ -1,6 +1,27 @@
+# README
+
+## freemarket_sample_64c
+フリマアプリのクローンサイト
+
+## Description
+フリマアプリのクローンサイト
+誰でも自由に商品を出品と購入ができます。
+
+## Function
+・haml/SASS記法と、命名規則BEMを使ったマークアップ
+・deviseを使用したユーザ登録機能
+・ancestroyを使用した多階層カテゴリの登録機能
+・active_hashを使用したデータ登録機能
+・pay.jpによるクレジットカード登録機能、クレジット決済機能
+・capistranoによるAWS EC2への自動デプロイ
+・ActiveStorageを使用しAWS S3への画像アップロード
+
+## environment
+・Ruby 2.5.1
+・Rails 5.2.3
+
 
 ## freemarket DB設計
-# README
 
 ## usersテーブル
 |Column|Type|Options|Index|
