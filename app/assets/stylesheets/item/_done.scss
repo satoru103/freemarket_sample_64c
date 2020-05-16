@@ -1,0 +1,27 @@
+.container{
+  .purchase__main{
+    text-align: center;
+    margin: 100px 200px;
+    &-top{
+      background-color: #fff3b8;
+      padding: 50px;
+      &__message1{
+        font-weight: bold;
+        color: #ff7f50;
+      }
+      &__message2{
+        padding-top: 10px;
+      }
+      
+    }
+    &-middle{
+      padding: 50px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      font-weight: bold;
+    }
+    .footerBox_back{
+      font-weight: bold;
+      padding: 50px;
+    }
+  }
+}

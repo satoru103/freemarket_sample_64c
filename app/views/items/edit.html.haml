@@ -1,0 +1,131 @@
+.itemsMain
+  .itemsMain__header
+    = image_tag 'logo.png'
+  = form_for @item do |f|
+    =render 'error_messages'
+    .sellHeader
+      .sellBox
+        .title
+          .title_box
+            %label 出品画像
+            %span.style-tag 必須
+        %p.details-box 最大10枚までアップロードできます
+        .image_box#image_box
+          - if @item.persisted?
+            - @item.pictures.each do |picture,i|
+              = image_tag picture.image.url,data: { index: i }, width: "50", height: '50'
+          .image_box-right#image_box-right
+            .image_box-left#image-box__container
+              = f.fields_for :pictures do |image|
+                .js-file_group{"data-index" => "#{image.index}"}
+                = image.label :image, class: 'image_box-icon' do
+                  %i.fa.fa-camera.likeIcon
+                  = image.file_field :image, class: 'hidden'
+                  %br/
+                  %span.js-remove#js-remove  削除
+                - if @item.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  -# 削除
+              -# - if @item.persisted?
+              -# .js-file_group{"data-index" => "#{@item.pictures.count}"}
+              -#   = file_field_tag :image, name: "item[pictures_attributes][#{@item.pictures.count}][image]", class: 'js-file'
+              -#     .js-remove#js-remove 
+      %hr.style_divider
+      .sellBox
+        .title
+          .title_box
+            %label 商品名
+            %span.style-tag 必須
+          .form
+            .form_space
+              = f.text_field :item_name, class: 'form_space', placeholder: '40文字以内'
+        .title
+          .title_box
+            %label 商品の説明
+            %span.style-tag 必須
+          .form
+            = f.text_area :discription, class: 'form_space', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n "
+      %hr.style_divider
+      .sellBox
+        .title
+          .title_box
+            %label カテゴリー
+            %span.style-tag 必須
+          .listing-form-box
+            .listing-product-detail__category
+              .listing-select-wrapper__box
+                = f.select :category_id, options_from_collection_for_select(Category.where(ancestry: @grandchild_category.parent.parent.ancestry), :id, :name,{selected: @item.category.parent.parent.id}),{},{class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+            .category-wrapper-select#children_wrapper
+              .category-wrapper-select__box
+                = f.select :category_id, options_for_select(Category.where(ancestry: @grandchild_category.parent.ancestry).map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+            .category-wrapper-select#grandchildren_wrapper
+              .category-wrapper-select__box 
+                = f.select :category_id,  options_for_select(Category.where(ancestry: @grandchild_category.ancestry).map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}), {},{class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+                -# = f.collection_select :category_id, Category.all , :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+      .sellBox
+        .title
+          .title_box
+            %label ブランド
+            %span.style-tag_sub 任意
+          .form
+            .form_space
+              = f.text_field :brand, class: 'form_space', placeholder: '例)シャネル'
+        .title
+          .title_box
+            %label 商品の状態
+            %span.style-tag 必須
+          .form
+            .form_space
+              = f.collection_select :status_id, Status.all, :id, :name
+
+      %hr.style_divider
+      .sellBox
+        %p.subtitle 配送について
+        .title
+          .title_box
+            %label 配送料の負担
+            %span.style-tag 必須
+          .form
+            .form_space
+              = f.collection_select :delivery_charge_id, DeliveryCharge.all, :id, :name
+        .title
+          .title_box
+            %label 発送元の地域
+            %span.style-tag 必須
+          .form
+            .form_space
+              = f.collection_select :area_id, Area.all, :id, :name
+        .title
+          .title_box
+            %label 発送までの日数
+            %span.style-tag 必須
+          .form
+            .form_space
+              = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name
+      %hr.style_divider
+    .footerBox
+      .sellBox
+        %p.subtitle 価格 (¥300〜9,999,999)
+        .footerBox_content
+          .footerBox_title
+            .price
+              .price_content
+                %label 販売価格
+                %span.style-tag 必須
+          .priceBox
+            %span.mark
+            .priceBox_form
+              = f.number_field :price,autocomplete: "off",placeholder: "0"
+        .footerBox_fee
+          %label 販売手数料(10%)         
+        %hr.style_divider
+          .title
+            .saleTitle 販売利益
+          .button_box
+            .button_content
+              = f.submit "出品する", {class:"style_button"}
+            .button_save
+              %button.save_button{tabindex: "0", type: "button"} 下書きに保存
+            .footerBox_back
+              = link_to 'もどる',root_path, class: "backbutton"
+= render 'footer'

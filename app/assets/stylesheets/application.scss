@@ -10,10 +10,12 @@
 @import 'item/item-new';            //商品投稿画面
 @import "error";                    //エラーメッセージ用
 @import 'mypage/mypage';            //マイページ画面
+@import 'mypage/user';              //ユーザー詳細変更ページ
 @import "user-new";                 //ユーザ新規登録画面    
 @import "mypage/cards";             //クレジットカード登録画面
 @import "mypage/addresses";         //マイページの住所登録画面
 @import 'item/purchase';            //商品購入確認画面
+@import 'item/done';                //商品購入完了画面
 @import 'font-awesome-sprockets';   //font-awesomeを使用するため
 @import 'font-awesome';             //font-awesomeを使用するため
 @import 'modules/flash';            //フラッシュ機能の表示設定

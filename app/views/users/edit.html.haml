@@ -1,0 +1,25 @@
+.container
+  = render 'items/header'
+  .account-page
+    = form_for(current_user) do |f|
+      //アイコン追加部分
+      .account-page__inner--icon
+        .account-page__inner--icon__label
+        .account-page__inner--icon__input
+          - if @image.present?
+            = image_tag @image.url, class: 'account-page__inner--icon__input__image', width: '100%'
+          - else
+            = image_tag("default.png") 
+          .account-page__inner--icon__input__image2
+          = f.file_field :image, class: 'account-page__inner--icon__input__btn', id: 'upload-icon'
+
+      .account-page__inner--user-form
+        //プロフィール追加部分
+        .field
+          .field-label
+            = f.label :プロフィールを入力する
+          .field-input
+            = f.text_area :profile, autocomplete: 'off'
+          .filed-submit
+            = f.submit :UPDATE
+  = render 'items/footer'

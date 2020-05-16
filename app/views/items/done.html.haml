@@ -1,0 +1,16 @@
+.container
+  = render 'items/header'
+  .purchase__main
+    .purchase__main-top
+      .purchase__main-top__message1
+        = icon("fas", "clock")
+        %p 発送をお待ちください
+      .purchase__main-top__message2
+        %p 出品者からの発送通知をお待ちください
+    .purchase__main-middle
+      %p 購入が完了しました
+    .footerBox_back
+      = link_to 'トップページに戻る',root_path, class: "backbutton"
+  = render 'items/footer'
+
+  

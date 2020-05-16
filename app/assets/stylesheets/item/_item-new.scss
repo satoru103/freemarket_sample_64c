@@ -230,5 +230,16 @@
   border-radius: 100px;
   margin: 0 auto;
 }
+.listing-select-wrapper__box{
+  display: inline-block;
+  position: relative;
+  width: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  &--select{
+    width: 630px;
+  }
+}
 
 

@@ -1,0 +1,76 @@
+.side
+  .mypage-nav
+    .mypage-nav__list          
+      %li.mypage-nav__list-item
+        マイページ
+      %li.mypage-nav__list-item
+        お知らせ
+      %li.mypage-nav__list-item
+        やることリスト
+      %li.mypage-nav__list-item
+        いいね！一覧
+      %li.mypage-nav__list-item
+        出品する
+      %li.mypage-nav__list-item
+        出品した商品-出品中
+      %li.mypage-nav__list-item
+        出品した商品-取引中
+      %li.mypage-nav__list-item
+        出品した商品-売却済み
+      %li.mypage-nav__list-item
+        購入した商品-取引中
+      %li.mypage-nav__list-item
+        購入した商品-過去の取引
+      %li.mypage-nav__list-item
+        ニュース一覧
+      %li.mypage-nav__list-item
+        評価一覧
+      %li.mypage-nav__list-item
+        ガイド
+      %li.mypage-nav__list-item
+        お問い合わせ
+
+    .mypage-nav__head
+      ペイメント
+    .mypage-nav__list
+      %li.mypage-nav__list-item
+        売上・振込申請
+
+      %li.mypage-nav__list-item
+        ポイント
+    
+
+    
+    .mypage-nav__head
+      設定
+    .mypage-nav__list
+      %li.mypage-nav__list-item
+        プロフィール
+    
+    .mypage-nav__list
+      %li.mypage-nav__list-item
+        -# もしユーザーがすでに発送元・お届け先住所(address)を登録済であれば編集画面へ
+        -# でなければ新規登録画面へ
+        -# - if @user.address.present?
+        -#  = link_to "発送元・お届け先住所変更", edit_user_address_path(@user)
+        -# - else
+        = link_to "発送元・お届け先住所変更", "#"
+    .mypage-nav__list
+      %li.mypage-nav__list-item
+        = link_to "支払い方法",   "#"
+      
+    .mypage-nav__list
+      %li.mypage-nav__list-item
+        メール/パスワード
+      
+    .mypage-nav__list
+      %li.mypage-nav__list-item
+        本人情報
+      
+    .mypage-nav__list
+      %li.mypage-nav__list-item
+        電話番号の確認
+      
+    .mypage-nav__list
+      %li.mypage-nav__list-item
+        ログアウト

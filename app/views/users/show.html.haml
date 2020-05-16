@@ -1,6 +1,8 @@
 .container
   = render 'items/header'
   .mypage_main
-    = render "rightmain"
+    .content
+      = render "righttopmain"
+      = render "rightbottommain"
     = render "leftside"
   = render 'items/footer'

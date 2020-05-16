@@ -1,0 +1,89 @@
+.mypage
+  .mypage--list
+    .mypage--list--info
+      お知らせ
+    .mypage--list--todo
+      やることリスト
+
+  .tab--list
+    %li.tab--list--info
+      お知らせ1
+    %li.tab--list--info
+      お知らせ2
+    %li.tab--list--info
+      お知らせ3
+    %li.tab--list--info
+      お知らせ4
+    %li.tab--list--info
+      お知らせ5
+    .info-go-list
+      = link_to "一覧を見る", "#"
+
+    -# .info--list-not-found
+    -#   現在お知らせはありません
+
+    
+
+
+    %li.tab--list--todo
+      やるべきこと1
+    %li.tab--list--todo
+      やるべきこと2
+    %li.tab--list--todo
+      やるべきこと3
+    %li.tab--list--todo
+      やるべきこと4
+    %li.tab--list--todo
+      やるべきこと5
+    .todo-go-list
+      = link_to "一覧を見る", "#"
+
+    
+    -# .todo--list-not-found
+    -#   現在やるべきことはありません
+
+
+.goods
+  .goods-name
+    購入した商品
+
+  .goods-purchase
+    .goods-purchase--transaction
+      取引中
+    .goods-purchase--post
+      過去の取引
+
+  .tab-list
+    %li.tab-list--transaction
+      取引1
+    %li.tab-list--transaction
+      取引2
+    %li.tab-list--transaction
+      取引3
+    %li.tab-list--transaction
+      取引4
+    %li.tab-list--transaction
+      取引5
+    .transaction-go-list
+      = link_to "一覧を見る", "#"
+
+    -# .transaction--list-not-found
+    -#   取引中の商品がありません
+
+    
+    %li.tab-list--post
+      過去購入物1
+    %li.tab-list--post
+      過去購入物2
+    %li.tab-list--post
+      過去購入物3
+    %li.tab-list--post
+      過去購入物4
+    %li.tab-list--post
+      過去購入物5
+    .post-go-list
+      = link_to "一覧を見る", "#"
+
+    -# .post--list-not-found
+    -#   過去の取引がありません
+

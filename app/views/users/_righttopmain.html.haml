@@ -1,0 +1,22 @@
+.user
+  .user-image
+    .user-icon
+      -if @image.present?
+        = link_to image_tag(@image.url), edit_user_path
+      - else
+        = link_to image_tag("default.png", class:"user-icon"), edit_user_path
+      
+
+    .user-name
+      ユーザー
+    .user-mumber
+      .user-evaluation
+        評価 10
+      .user-sell
+        出品数 10
+
+    .user-profile
+      = simple_format(@profile)
+    
+
+  

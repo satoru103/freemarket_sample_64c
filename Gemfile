@@ -49,6 +49,8 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -84,4 +86,6 @@ gem 'fog-aws'
 gem 'font-awesome-sass'
 gem 'active_hash'
 gem 'pry-rails'
+gem 'payjp'
 gem 'ancestry'
+gem 'rb-readline'

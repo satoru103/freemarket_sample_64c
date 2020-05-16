@@ -1,6 +1,6 @@
 .side
   .mypage-nav
-    .mypage-nav__list          
+    .mypage-nav__list
       %li.mypage-nav__list-item
         マイページ
       %li.mypage-nav__list-item
@@ -38,15 +38,15 @@
 
       %li.mypage-nav__list-item
         ポイント
-    
 
-    
+
+
     .mypage-nav__head
       設定
     .mypage-nav__list
       %li.mypage-nav__list-item
         プロフィール
-    
+
     .mypage-nav__list
       %li.mypage-nav__list-item
         -# もしユーザーがすでに発送元・お届け先住所(address)を登録済であれば編集画面へ
@@ -57,20 +57,24 @@
           = link_to "発送元・お届け先住所変更", new_user_address_path(@user)
     .mypage-nav__list
       %li.mypage-nav__list-item
-        = link_to "支払い方法",   "#"
-      
+        -# もしユーザーがすでにクレジットカードを登録済であれば一覧・編集画面へ
+        -# でなければ新規登録画面へ
+        - if @user.cards.present?
+          = link_to "支払い方法", card_path(@user)
+        - else
+          = link_to "支払い方法", new_card_path
     .mypage-nav__list
       %li.mypage-nav__list-item
         メール/パスワード
-      
+
     .mypage-nav__list
       %li.mypage-nav__list-item
         本人情報
-      
+
     .mypage-nav__list
       %li.mypage-nav__list-item
         電話番号の確認
-      
+
     .mypage-nav__list
       %li.mypage-nav__list-item
         ログアウト

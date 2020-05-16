@@ -1,13 +1,19 @@
 require 'rails_helper'
 
-describe User do
+RSpec.describe User, type: :model do
   describe '#create' do
 
-  # ユーザー情報
+    # ユーザー情報
     it "ニックネーム必須" do
       user = build(:user, nickname: nil)
       user.valid?
       expect(user.errors[:nickname]).to include("を入力してください")
+    end
+
+    it "email必須" do
+      user = build(:user, email: nil)
+      user.valid?
+      expect(user.erroes[:email]).to include("が入力されていません")
     end
 
     it "メールアドレスは一意である" do
@@ -50,21 +56,28 @@ describe User do
       expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
     end
 
-  # 本人確認情報
-    it "ユーザー本名が、名字と名前でそれぞれ必須" do
-      user = build(:user, first_name: "", last_name: "test")
+    # 本人確認情報
+
+    it "ユーザー本名の苗字が必須" do
+      user = build(:user, first_name: nil)
       user.valid?
       expect(user.errors[:first_name]).to include("を入力してください")
-      user = build(:user, first_name: "test", last_name: "")
+    end
+
+    it "ユーザー本名の名前が必要" do
+      user = build(:user, last_name: nil)
       user.valid?
       expect(user.errors[:last_name]).to include("を入力してください")
     end
 
-    it "ユーザー本名のふりがなが、名字と名前でそれぞれ必須" do
-      user = build(:user,first_name_kana:"", last_name_kana:"test")
+    it "ユーザー本名の苗字がふりがなで必須" do
+      user = build(:user,first_name_kana: nil)
       user.valid?
       expect(user.errors[:first_name_kana]).to include("を入力してください")
-      user = build(:user,first_name_kana:"test", last_name_kana:"")
+    end
+
+    it "ユーザー本名の名前がふりがなで必要" do
+      user = build(:user,last_name_kana: nil)
       user.valid?
       expect(user.errors[:last_name_kana]).to include("を入力してください")
     end

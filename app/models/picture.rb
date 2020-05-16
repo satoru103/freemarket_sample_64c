@@ -3,4 +3,5 @@ class Picture < ApplicationRecord
 
   #Association
   belongs_to :item
+  validates :image, presence: true
 end

@@ -19,34 +19,34 @@ $min: 767px;  // 500px <= 767px
       justify-content: center;
       padding: 20px 0;
       @include max {
-      background-color: $back-color;
+      background-color: whitesmoke;
       };
       @include mid {
-        background-color: $back-color;
+        background-color: whitesmoke;
         display: list-item;
       };
       @include min {
-        background-color: $back-color;
+        background-color: whitesmoke;
         display: list-item;
       };
       .side{
         //サイドバーの設定
         @include max {
-          background-color: $back-color;
+          background-color: whitesmoke;
           width: 280px;
           height: auto;
           margin-right: 60px;
           order: 1;
         };
         @include mid {
-          background-color: $back-color;
+          background-color: whitesmoke;
           width: 700px;
           height: auto;
           margin: 0 auto;
 
         };
         @include min {
-          background-color: $back-color;
+          background-color: whitesmoke;
           max-width: 100%;
           height: auto;
 
@@ -75,6 +75,9 @@ $min: 767px;  // 500px <= 767px
             background: #fff;
             font-size: 14px;
             color: #333;
+            a{
+              text-decoration: none;
+            }
           }
           &__list-item::after{
             // list-item(各々のメニュー)へ矢印(::after)を作成する
@@ -113,18 +116,18 @@ $min: 767px;  // 500px <= 767px
         // float: right;
         // margin-left: 60px;
         @include max {
-          background-color: $back-color;
+          background-color: whitesmoke;
           width: 700px;
           order: 2;
         };
         @include mid {
-          background-color: $back-color;
+          background-color: whitesmoke;
           width: 700px;
           margin: 0 auto;
 
         };
         @include min  {
-          background-color: $back-color;
+          background-color: whitesmoke;
           max-width: 100%;
         };
 
@@ -132,30 +135,31 @@ $min: 767px;  // 500px <= 767px
         .user{
           .user-image{
             //背景写真
-            height: 200px;
-            background-image: image-url("images/kirakira.jpg");
+            height: 300px;
+            background-image: image-url("/kirakira.jpg");
             background-repeat: no-repeat;
+            
             .user-icon{
               //ユーザーのアイコン写真
-              padding-top: 50px;
-              &::before{
                 content: '';
-                width: 60px; 
-                height: 60px;
-                background-image: url("member_photo_noimage_thumb.png");
-                //width, heightと同じになる
-                background-size: cover; 
-                background-repeat: no-repeat;
-                border-radius: 50%;
-                display: block;
                 margin: 0 auto;
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                padding-top: 20px;
+                object-fit: contain;
+                img{
+                  // object-fit: cover;
+                  border-radius: 50%;
+                }
+                
               }
               .user-name{
                 //ユーザーの名前
                 text-align: center;
                 font-size: 14px;
                 font-weight: bold;
-                padding-top: 5px;
+                padding-top: 50px;
               }
               .user-mumber{
                 display: flex;
@@ -176,7 +180,11 @@ $min: 767px;  // 500px <= 767px
                 padding-left: 10px;
                 }
               }  
-            } 
+              .user-profile{
+                text-align: center;
+                padding-top: 20px;
+              }
+             
           }
         }
         
@@ -238,18 +246,18 @@ $min: 767px;  // 500px <= 767px
               position: relative;
       
               @include max {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -293,18 +301,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -409,18 +417,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -464,18 +472,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: $back-color;
+                background-color: whitesmoke;
                 height: 50px;
                 line-height: 3rem;
               };

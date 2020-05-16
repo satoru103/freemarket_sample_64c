@@ -1,7 +1,26 @@
 .card-box
-  %div.card-box__header 支払い方法
-  %div.card-box__list クレジットカード一覧
-  %div.card-box__btn
-    = link_to "クレジットカードを追加する", new_card_path
-  %div.card-box__underline
-  %div.card-box__payment お支払い方法について
+  .card-box__header 支払い方法
+  .card-box__list
+    %h3 クレジットカード一覧
+    - if @card.present?
+      %p.creditcard-info__number
+        = "**** **** **** " + @default_card_information.last4
+      %br
+      %p.creditcard-info__period 
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
+      = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        %input{ type: "hidden", name: "card_id", value: "" }
+        %button 削除する
+    - else 
+      .card-box__new-card
+      = link_to new_card_path do
+        %i.far.fa-credit-card
+        クレジットカードを追加する
+  .card-box__underline
+  .card-box__payment お支払い方法について
+
+
+
+

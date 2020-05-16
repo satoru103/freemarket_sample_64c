@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   #Association
   belongs_to :user
   has_many :comments
-  has_many :pictures,dependent: :destroy
+  has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :pictures, allow_destroy: true
   belongs_to :category
 
@@ -20,8 +20,8 @@ class Item < ApplicationRecord
   validates :item_name, presence: true, length: {maximum: 40}
   validates :discription, presence: true, length: {maximum: 1000}
 
-
   validates_associated :pictures
   validates :pictures, presence: true
+  
   
 end

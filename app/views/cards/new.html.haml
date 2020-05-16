@@ -1,4 +1,6 @@
-.default-container
-  .container
-    = render "users/leftside"
+.container
+  = render 'items/header'
+  .mypage_main
     = render "creditcard-form"
+    = render "card-leftside"
+  = render 'items/footer'
