@@ -1,7 +1,6 @@
 .wrapper
   = render 'items/header'
 
-
 .categoryIndex
   %h1 カテゴリー一覧
   %br
@@ -10,29 +9,21 @@
       %li.parent_list_top
         -# 下行、ページ内リンクのためanchor指定しています
         = link_to parent.name, {anchor: "#{parent.id}" }
-        -# %ul.category2
-        -#   - parent.children.each do |child|
-        -#     %li.child_list_top
-        -#       =child.name
-        -#       %ul.category3
-        -#         - child.children.each do |grandchild|
-        -#           %li.grandchild_list_top
-        -#             =grandchild.name
   
   %ul.category1
     - @category_parent.each do |parent|
       -# 下行、ページ内リンクのためid指定しています
-      %li.parent_list{ id: "#{parent.id}"} 
+      %li.parent_category{ id: "#{parent.id}"} 
         .parent_name
           = parent.name
         %ul.category2
           - parent.children.each do |child|
-            %li.child_list{style:"text-indent:1em"}
+            %li.child_category{style:"text-indent:1em"}
               .child_name
                 = child.name
               %ul.category3
                 - child.children.each do |grandchild|
-                  %li.grandchild_list{style:"text-indent:2.5em"}
+                  %li.grandchild_category{style:"text-indent:2.5em"}
                     .grandchild_name
                       =link_to grandchild.name, category_path(grandchild.id)
 
@@ -61,7 +52,7 @@
     border-radius: 5px;
   }
   
-  li.parent_list{
+  li.parent_category{
     border-style: solid;
     background-color: white;
     margin-top:50px;
