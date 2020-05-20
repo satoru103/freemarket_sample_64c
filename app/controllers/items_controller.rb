@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     @item = Item.all.order("created_at DESC").limit(3)
     @items = Item.includes(:pictures).order('created_at DESC')
     @picture = Picture.all
-    @category_parent = Category.where(ancestry: nil)
+    # @category_parent = Category.where(ancestry: nil)
   end
 
   def new
@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @category_parent = Category.where(ancestry: nil)
+    # @category_parent = Category.where(ancestry: nil)
   end
 
   def edit

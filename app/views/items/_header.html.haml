@@ -17,7 +17,7 @@
           = "カテゴリー"
           = image_tag 'icon_category.png'
         %ul.category1
-          - @category_parent.each do |parent|
+          - Category.where(ancestry: nil).each do |parent|
             %li.parent_list
               = link_to parent.name, category_path(parent.indirects.ids),{style:"color: black"}
               %ul.category2
