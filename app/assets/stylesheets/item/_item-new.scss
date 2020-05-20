@@ -73,7 +73,7 @@
   @include must_mark;
   &_sub{
     background-color: #bfbfbf;
-    color: #fff;
+    color: $white-color;
   }
 }
 .sell{
@@ -127,7 +127,7 @@
   margin-bottom: 24px;
 }
 .selectBox{
-  background-color: #fff;
+  background-color: $white-color;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -218,13 +218,13 @@
 }
 .style_button{
   background-color: $selection-color;
-  color: #fff;
+  color: $white-color;
   display: block;
   margin-bottom: 20px;
   line-height: 48px;
   background: $selection-color;
   border: 1px solid $selection-color;
-  color: #fff;
+  color: $white-color;
   width: 60%;
   font-size: 18px;
   border-radius: 100px;

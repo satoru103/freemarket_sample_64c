@@ -14,7 +14,7 @@
   }
 }
 .itemBox{
-  background: #fff;
+  background: $white-color;
   padding: 24px 40px 40px;
   &__name{
     text-align: center;
@@ -155,7 +155,7 @@
 }
 .commentBox {
     padding: 24px;
-    background-color: #fff;
+    background-color: $white-color;
     margin: 10px 0;
     text-align: center;
   textarea {
@@ -176,7 +176,7 @@
     line-height: 48px;
     background: $selection-color;
     border: 1px solid $selection-color;
-    color: #fff;
+    color: $white-color;
     width: 60%;
     font-size: 18px;
     border-radius: 100px;
@@ -221,7 +221,7 @@
 .purchaseBtn{
   background-color:$selection-color;
   border-color: transparent;
-  color: #fff;
+  color: $white-color;
   display: block;
   margin-bottom: 20px;
   width: 60%;
@@ -236,7 +236,7 @@
 .editBtn{
   background-color:$selection-color;
   border-color: transparent;
-  color: #fff;
+  color: $white-color;
   display: block;
   margin-bottom: 20px;
   width: 60%;

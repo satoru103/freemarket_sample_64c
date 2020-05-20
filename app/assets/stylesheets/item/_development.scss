@@ -1,0 +1,32 @@
+#development__message{
+  height: 100%;
+  width: 100%;
+  padding: 200px 200px;
+  background: #f8f8f8f8;
+}
+.development__message-center{
+  background-color:$selection-color;
+  color: $white-color;
+  display: block;
+  font-weight: bold;
+  border: solid 3px #000000;
+  margin-bottom: 20px;
+  width: 80%;
+  height: 50%;
+  font-size: 18px;
+  margin: 0 auto;
+  text-align: center;
+  span{
+    font-size: 30px;
+    display: inline-block;
+    line-height: 5;
+  }
+}
+.development__message-back{
+  margin-top: 20px;
+  text-align: center;
+  a{
+    text-decoration: none;
+    font-size: 20px;
+  }
+}

@@ -1,6 +1,6 @@
 .footer{
   background-color:#272727;
-  color: #fff;
+  color: $white-color;
   padding: 60px 0;
   bottom: 0;
   .footer__menu{
@@ -22,7 +22,7 @@
       width : calc(100% / 3);
     a{
      text-decoration: none;
-     color:#fff;
+     color:$white-color;
      font-size: 12px;
      white-space: nowrap;
      }
@@ -37,7 +37,7 @@
     }
   }
   .Exhibition-Btn{
-    background-color:#3CCACE ;
+    background-color:$selection-color ;
     width: 120px;
     right: 30px;
     bottom: 30px;

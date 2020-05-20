@@ -14,6 +14,7 @@
     .header__bottom-left
       .categoryBox
         = link_to categories_path do
+
           = "カテゴリー"
           = image_tag 'icon_category.png'
         %ul.category1
@@ -59,7 +60,7 @@
         -#       = link_to "その他", "/"
       .brand_box
         = image_tag 'icon_brand.png'
-        = link_to "ブランド", "/jp/"
+        = link_to "ブランド", development_items_path
     .header__bottom-right
       .user_box
         -# もしユーザーがログインしているかつログインユーザーであればログアウト、マイページ表示

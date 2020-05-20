@@ -11,7 +11,7 @@
   }
 
   @mixin must_mark{
-    background: #3CCACE;
+    background: $selection-color;
               color: white;
               width: 50px;   
               border-radius: 5px;
@@ -23,7 +23,7 @@
     color: white;
         width: 250px;
         height: 30px;
-        background-color: #3CCACE;
+        background-color: $selection-color;
         border-radius: 5px;
         font-size: 15px;
         &:hover{
