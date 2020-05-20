@@ -4,24 +4,24 @@
 .categoryIndex
   %h1 カテゴリー一覧
   %br
-  %ul.category1
+  %ul.category_index_1
     - @category_parent.each do |parent|
       %li.parent_list_top
         -# 下行、ページ内リンクのためanchor指定しています
         = link_to parent.name, {anchor: "#{parent.id}" }
   
-  %ul.category1
+  %ul.category_index_1
     - @category_parent.each do |parent|
       -# 下行、ページ内リンクのためid指定しています
       %li.parent_category{ id: "#{parent.id}"} 
         .parent_name
           = parent.name
-        %ul.category2
+        %ul.category_index_2
           - parent.children.each do |child|
             %li.child_category{style:"text-indent:1em"}
               .child_name
                 = child.name
-              %ul.category3
+              %ul.category_index_3
                 - child.children.each do |grandchild|
                   %li.grandchild_category{style:"text-indent:2.5em"}
                     .grandchild_name
