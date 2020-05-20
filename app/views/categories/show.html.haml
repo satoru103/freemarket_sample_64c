@@ -1,0 +1,14 @@
+.productLists
+%br
+  .span{style: "font-size:30px"} 該当商品一覧
+  %br
+  -@category_items.each do |category_item|
+    .productList
+      .productList--img
+        = link_to (image_tag category_item.pictures[0].image.url,size:"185x189"), item_path(category_item.id)
+      %h3.name 
+        = category_item.item_name
+      .details
+        %ul
+          %li.price
+            = category_item.price

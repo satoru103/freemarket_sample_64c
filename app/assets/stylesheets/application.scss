@@ -20,3 +20,5 @@
 @import 'font-awesome-sprockets';   //font-awesomeを使用するため
 @import 'font-awesome';             //font-awesomeを使用するため
 @import 'modules/flash';            //フラッシュ機能の表示設定
+@import 'category/category-index';  //カテゴリー一覧ページ
+@import 'category/category-show';   //カテゴリー該当商品一覧ページ

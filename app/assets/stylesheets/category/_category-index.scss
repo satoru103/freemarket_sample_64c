@@ -1,0 +1,47 @@
+.categoryIndex{
+  padding-top: 30px;
+  width : 50%;
+  margin: 0 auto;
+
+  h1{
+  font-size: 25px;
+  }
+
+  .parent_list_top{
+  display: inline;
+  font-size: 20px;
+  border-style: solid;
+  margin: 10px;
+  padding: 10px;
+  white-space: nowrap; 
+  background-color: white;
+  line-height: 50px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  }
+}
+
+li.parent_category{
+  border-style: solid;
+  background-color: white;
+  margin-top:50px;
+
+  .parent_name{
+    background-color: #3CCACE;
+    font-size: 30px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .child_name{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .grandchild_name{
+    font-size: 20px;
+    padding: 10px;
+  }
+}

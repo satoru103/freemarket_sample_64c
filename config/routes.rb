@@ -6,16 +6,18 @@ Rails.application.routes.draw do
       get 'purchase',to: 'items#purchase'
       post 'done',to: 'items#done'
      end
-  #Ajaxで動くアクションのルート
-  collection do
-    get 'get_category_children', defaults: { format: 'json' }
-    get 'get_category_grandchildren', defaults: { format: 'json' }
-    get 'development',to: 'items#development'  #開発中のメッセージ表示
-  end
+     
+    #Ajaxで動くアクションのルート
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
   end 
+
   resources :users, only: [:edit, :update, :show] do
     resources :addresses, only: [:new, :create, :edit, :update]
   end
+
 
   resources :cards, only: [:index,:new,:show] do
     collection do
@@ -24,4 +26,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
+
+  resources :categories, only: [:index, :show]
+
 end
