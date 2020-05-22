@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'development',to: 'items#development'
     end
+
   end 
 
   resources :users, only: [:edit, :update, :show] do
@@ -29,5 +30,6 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show]
+  resources :brands, only: [:index]
 
 end
