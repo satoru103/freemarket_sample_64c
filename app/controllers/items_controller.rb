@@ -40,8 +40,9 @@ class ItemsController < ApplicationController
 
 
   def show
+    @item = Item.find(params[:id])
     @comments = @item.comments
-    @comment = Comment.new
+    @comment = @item.comments.build
   end
 
   def edit

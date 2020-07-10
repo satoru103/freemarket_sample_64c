@@ -80,13 +80,20 @@
                     %i.fa.fa-flag
                     不適切な商品の通報
           .commentBox
-            = form_for @comment do |c|
-              %ul.commentContents
-                = c.text_field :content
-                -# %input{name: "utf8", type: "hidden", value: "✓"}
-                -# %input{name: "authenticity_token", type: "hidden", value: "odOrqXT4yFlepYJilzx8Evj1sY2mzm24tcTbB93bppoPxV5gfR7y8EmB3NimnRyiCl4Y40D+zbLhWoYbGIaq9A=="}/
-                -# %textarea#comment_body{name: "comment[body]", required: "required"}
-                %p.noticeMsg
+            - @comments.each do |c|
+              - unless c.user.blank?
+                %a{:href => "#{user_path(c.user_id)}"}= image_tag c.user.image.to_s,class:"rounded-circle icon_image mr-3 mb-3"
+                = c.user.username unless c.user.blank?
+                %br/
+                = c.content
+              %br/
+            - if user_signed_in?
+              = form_with(model: [@item, @comments], local: true) do |f|
+                = f.text_area :content, class: "form-control", rows: 5
+                = button_tag type: "submit", class: "btn btn-success float-right mt-1" do
+                  %i.far.fa-comments
+                  コメントする
+
                 相手のことを考え丁寧なコメントを心がけましょう。
                 %br/
                 不快な言葉遣いなどは利用制限や退会処分となることがあります。
